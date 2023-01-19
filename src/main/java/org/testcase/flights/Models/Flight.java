@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.Duration;
 
 @Entity
 public class Flight {
@@ -15,9 +14,9 @@ public class Flight {
     private String flightNumber;
     private Airport origin;
     private Airport destination;
-    private Duration duration;
+    private long duration;
 
-    public Flight(int id, String flightNumber, Airport origin, Airport destination, Duration duration) {
+    public Flight(int id, String flightNumber, Airport origin, Airport destination, long duration) {
         this.id = id;
         this.flightNumber = flightNumber;
         this.origin = origin;
@@ -57,11 +56,11 @@ public class Flight {
         this.destination = destination;
     }
 
-    public Duration getDuration() {
+    public long getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(long duration) {
         this.duration = duration;
     }
 }
