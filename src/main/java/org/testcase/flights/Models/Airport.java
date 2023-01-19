@@ -14,14 +14,14 @@ public class Airport {
     private String name;
     private String location;
     private String code;
-    private String zone;
+    private String zoneId;
 
-    public Airport(int id, String name, String location, String code, String zone) {
+    public Airport(int id, String name, String location, String code, String zoneId) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.code = code;
-        this.zone = zone;
+        this.zoneId = zoneId;
     }
 
     public int getId() {
@@ -56,11 +56,11 @@ public class Airport {
         this.code = code;
     }
 
-    public String getZone() {
-        return zone;
+    public String getZoneId() {
+        return zoneId;
     }
 
-    public void setZone(String zone) {
-        this.zone = zone;
+    public void setZone(String zoneId) {
+        this.zoneId = zoneId;
     }
 }
