@@ -1,18 +1,23 @@
 package org.testcase.flights.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "flight")
 public class Flight {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+    @Column(name = "flightnumber")
     private String flightNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "origin_code", referencedColumnName = "code")
     private Airport origin;
+
+    @ManyToOne
+    @JoinColumn(name = "destination_code", referencedColumnName = "code")
     private Airport destination;
     private long duration;
 

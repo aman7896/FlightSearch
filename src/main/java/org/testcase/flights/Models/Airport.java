@@ -1,27 +1,20 @@
 package org.testcase.flights.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Airport {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String location;
-    private String code;
-    private String zoneId;
 
-    public Airport(int id, String name, String location, String code, String zoneId) {
+    @Column(name = "code", unique = true)
+    private String code;
+
+    public Airport(int id, String code) {
         this.id = id;
-        this.name = name;
-        this.location = location;
         this.code = code;
-        this.zoneId = zoneId;
     }
 
     public int getId() {
@@ -32,35 +25,11 @@ public class Airport {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public String getCode() {
         return code;
     }
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public String getZoneId() {
-        return zoneId;
-    }
-
-    public void setZone(String zoneId) {
-        this.zoneId = zoneId;
     }
 }
