@@ -11,9 +11,6 @@ import org.testcase.flights.Repos.FlightRepository;
 @RequestMapping("/api/flights")
 public class FlightController {
 
-    @Autowired
-    private FlightRepository flightRepository;
-
     @GetMapping("/getall")
     public JSONArray getAllFlights(){
         return null;
