@@ -1,10 +1,11 @@
 package org.testcase.flights.Models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "flight")
-public class Flight {
+public class Flight implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

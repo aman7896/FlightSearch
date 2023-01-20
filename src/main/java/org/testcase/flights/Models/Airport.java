@@ -1,9 +1,10 @@
 package org.testcase.flights.Models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Airport {
+public class Airport implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
