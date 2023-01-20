@@ -1,7 +1,7 @@
 package org.testcase.flights.Controller;
 
-import org.h2.util.json.JSONArray;
-import org.h2.util.json.JSONObject;
+import org.json.JSONObject;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.testcase.flights.Models.Flight;

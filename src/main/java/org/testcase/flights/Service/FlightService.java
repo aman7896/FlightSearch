@@ -1,11 +1,8 @@
 package org.testcase.flights.Service;
 
-import org.h2.util.json.JSONArray;
-import org.h2.util.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.testcase.flights.Models.Flight;
 import org.testcase.flights.Repos.FlightRepository;
 
@@ -13,7 +10,7 @@ public class FlightService {
 
     @Autowired
     private FlightRepository flightRepository;
-    
+
     public JSONArray getAllFlights(){
         return null;
     }
