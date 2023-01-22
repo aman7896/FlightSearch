@@ -23,7 +23,7 @@ public class FlightServiceTest {
     public void getFlightByIdTest(){
         Flight flight = new Flight(1,"IND0001", new Airport(1,"DEL"), new Airport(2 , "BLR"), 9000000);
         Optional<Flight> searched = flightService.getFlightById(1);
-        assertEquals(flight.toString(),searched.orElse(null).toString());
+        assertEquals(flight.toString(),searched.isPresent()?searched.get().toString():null);
     }
     @Test
     public void createFlightTest(){
@@ -44,7 +44,7 @@ public class FlightServiceTest {
     public void getFlightByNumberTest(){
         Flight flight = new Flight(2,"IND0002", new Airport(2,"BLR"), new Airport(1 , "DEL"), 9000000);
         Optional<Flight> searched = flightService.getFlightByNumber("IND0002");
-        assertEquals(flight.toString(),searched.orElse(null).toString());
+        assertEquals(flight.toString(),searched.isPresent()?searched.get().toString():null);
     }
     @Test
     public void getFlightByOrigDestTest(){
