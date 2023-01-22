@@ -13,9 +13,20 @@ public class Airport implements Serializable {
     @Column(name = "code", unique = true)
     private String code;
 
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                '}';
+    }
+
     public Airport(int id, String code) {
         this.id = id;
         this.code = code;
+    }
+
+    public Airport() {
     }
 
     public int getId() {
