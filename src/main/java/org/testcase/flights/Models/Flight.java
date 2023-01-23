@@ -32,7 +32,7 @@ public class Flight implements Serializable {
         this.duration = duration;
     }
 
-    @Column(name = "flightnumber")
+    @Column(name = "flightnumber", unique = true)
     private String flightNumber;
 
     @ManyToOne

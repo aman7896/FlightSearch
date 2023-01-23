@@ -1,5 +1,7 @@
 package org.testcase.flights.Models;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,6 +14,11 @@ public class Airport implements Serializable {
 
     @Column(name = "code", unique = true)
     private String code;
+
+    public Airport(JSONObject obj) {
+        this.id = obj.getInt("id");
+        this.code = obj.getString("code");
+    }
 
     @Override
     public String toString() {
