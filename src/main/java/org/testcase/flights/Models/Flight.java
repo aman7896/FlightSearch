@@ -14,34 +14,18 @@ public class Flight implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "id=" + id +
-                ", flightNumber='" + flightNumber + '\'' +
-                ", origin=" + origin +
-                ", destination=" + destination +
-                ", duration=" + duration +
-                '}';
-    }
-
-    public Flight(String flightNumber, Airport origin, Airport destination, long duration) {
-        this.flightNumber = flightNumber;
-        this.origin = origin;
-        this.destination = destination;
-        this.duration = duration;
-    }
-
-    @Column(name = "flightnumber", unique = true)
+    @Column(name = "flightnumber", unique = true, nullable = false)
     private String flightNumber;
 
     @ManyToOne
-    @JoinColumn(name = "origin_code", referencedColumnName = "code")
+    @JoinColumn(name = "origin_code", referencedColumnName = "code", nullable = false)
     private Airport origin;
 
     @ManyToOne
-    @JoinColumn(name = "destination_code", referencedColumnName = "code")
+    @JoinColumn(name = "destination_code", referencedColumnName = "code", nullable = false)
     private Airport destination;
+
+    @Column(nullable = false)
     private long duration;
 
     public Flight() {
@@ -94,4 +78,15 @@ public class Flight implements Serializable {
     public void setDuration(long duration) {
         this.duration = duration;
     }
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "id=" + id +
+                ", flightNumber='" + flightNumber + '\'' +
+                ", origin=" + origin +
+                ", destination=" + destination +
+                ", duration=" + duration +
+                '}';
+    }
+
 }
