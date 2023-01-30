@@ -35,7 +35,7 @@ Service usage guide:
         }
 	}
 	Expected Response: Flights with requested origin and destination
-	Request Method: PUT
+	Request Method: POST
 	
 	Service: Get flight by Origin Destination Combination
 	Path:"/api/flights/getflightbyorigdest"
